@@ -96,15 +96,17 @@
       display: inline-block; /* aby margin-top zadziałał dla linka */
       color: #aaa;
       font-size: 14px;
-
-
-
     }
 
     .about-link a {
       color: #aaa;
       text-decoration: underline;
       cursor: pointer;
+    }
+
+    .about-link:hover {
+      color: white;                /* zmienia kolor tekstu na biały */
+      transition: 0.3s;            /* płynne przejście */
     }
 
     .main {
@@ -198,7 +200,8 @@
       <a href="#" class="about-link" id="about-link">O mnie</a>
     </div>
     <div class="copyright">
-      &copy; 2025 Zuzanna Karel
+      &copy; 2025 zauwazam </br>All rights reserved.</br>
+      Designed by: Albert Janik
     </div>
   </div>
   
@@ -251,7 +254,6 @@
       about: `
           <div class="about-gallery">
             <img src="omnie1.png" alt="Zuzanna Karel" style="width:100%; height:auto; object-fit:cover;" />
-            <img src="omnie2.jpg" alt="Zuzanna Karel" style="width:100%; height:auto; object-fit:cover;" />
           </div>
       `
     };
