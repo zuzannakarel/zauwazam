@@ -2,35 +2,344 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moje Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zuzanna Karel Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
+      font-family: 'Raleway', sans-serif;
       display: flex;
       height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      background-color: #444;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn:hover {
       background-color: #000;
+      color: #ccc;
+    }
+
+    .sidebar a.title-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .sidebar {
+      padding: 80px 50px 50px 50px;
+      max-width: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #333;
+      color: #eee;
+      box-sizing: border-box;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      max-width: 200px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .sidebar p.description {
+      font-size: 13px;
+      margin-bottom: 30px;
+      max-width: 200px;
+      text-align: left;
+      color: #aaa;
+      line-height: 1.5;
+    }
+    .sidebar .copyright {
+      margin-top: 180px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      user-select: none;
+    }
+
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .nav button {
+      background-color: #444;
+      color: #ddd;
+      border: none;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      display: inline-block;
+      min-width: 170px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .nav button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    .about-link {
+      text-align: center;
+      margin-top: 40px;      /* odstęp od góry, możesz zmienić wartość */
+      display: inline-block; /* aby margin-top zadziałał dla linka */
+      color: #aaa;
+      font-size: 14px;
+
+
+
+    }
+
+    .about-link a {
+      color: #aaa;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .tiles {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .tile:hover {
+      background-color: #7D1D1D;
+      transform: scale(1.01);
+    }
+
+    .tile {
+      display: flex;
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      padding: 30px;
+      gap: 15px;
+    }
+
+    .tile img {
+      width: 350px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .tile-text {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .tile-text h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .tile-text p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .tile-text hr {
+      width: 400px;
+      border: none;
+      border-top: 2px solid #ccc;
+    }
+
+    .page-content {
+      max-width: 600px;
+    }
+
+    .concert-gallery,
+    .street-gallery,
+    .portrait-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      height: auto;
+    }
+
+
+    .concert-gallery img,
+    .street-gallery img,
+    .portrait-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <a href="https://drive.google.com/file/d/1_UXzmRf4PmZa5tc3j112qfnNrvPuou0-/view?usp=share_link" class="btn" target="_blank">Portfolio</a>
+  <div class="sidebar">
+    <h1><a href="#" class="title-link" id="home-link">ZUZANNA KAREL</a></h1>
+    <p class="description">Szukam drugiego spojrzenia – w ludziach, miejscach, codzienności.</p>
+    <div class="nav">
+      <button data-page="portrety">Portrety</button>
+      <button data-page="koncerty">Koncerty</button>
+      <button data-page="street">Street</button>
+      <button data-page="landscape">Landscape</button>
+      <a href="#" class="about-link" id="about-link">O mnie</a>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Zuzanna Karel
+    </div>
+  </div>
+  
+
+  <div class="main" id="main-content">
+    <!-- Dynamic content -->
+  </div>
+
+  <script>
+    const main = document.getElementById('main-content');
+    const homeLink = document.getElementById('home-link');
+    const aboutLink = document.getElementById('about-link');
+
+    const pages = {
+      portrety: `
+        <div class="portrait-gallery">
+          <img src="23.png" alt="Portret 1">
+          <img src="25.png" alt="Portret 2">
+          <img src="19.png" alt="Portret 3">
+          <img src="27.png" alt="Portret 4">
+          <img src="20.png" alt="Portret 5">
+          <img src="21.png" alt="Portret 6">
+          <img src="22.png" alt="Portret 7">
+          <img src="24.png" alt="Portret 8">
+          <img src="26.png" alt="Portret 9">
+        </div>
+      `,
+      koncerty: `
+        <div class="concert-gallery">
+          <img src="11.png" alt="Koncert 1">
+          <img src="12.png" alt="Koncert 2">
+          <img src="13.png" alt="Koncert 3">
+        </div>
+      `,
+      street: `
+        <div class="street-gallery">
+          <img src="14.2.png" alt="Street 1">
+          <img src="15.png" alt="Street 2">
+          <img src="16.png" alt="Street 3">
+          <img src="17.png" alt="Street 4">
+          <img src="18.png" alt="Street 5">
+        </div>
+      `,
+      landscape: `
+        <h2>Landscape</h2>
+        <div class='page-content'>
+          <p>Krajobrazy – przestrzenie, kolory i emocje zaklęte w pejzażach.</p>
+        </div>
+      `,
+      about: `
+        <div class="page-content">
+          <div class="about-gallery">
+            <img src="30.png" alt="Zuzanna Karel" style="width:100%; height:auto; object-fit:cover;" />
+          </div>
+        </div>
+      `
+    };
+
+    function renderHome() {
+      main.innerHTML = `
+        <div class="tiles">
+          <div class="tile" data-page="portrety">
+            <img src="port.jpg" alt="Portrety" />
+            <div class="tile-text">
+              <h2>Portrety</h2>
+              <p><strong>Fotografia portretowa</strong> - opowieść o świetle, </br> ruchu i głębi spojrzenia</p>
+              <hr />
+            </div>
+          </div>
+          <div class="tile" data-page="koncerty">
+            <img src="konc.jpg" alt="Koncerty" />
+            <div class="tile-text">
+              <h2>Koncerty</h2>
+              <p><strong>Fotografia koncertowa</strong> - energia i dźwięk</p>
+              <hr />
+            </div>
+          </div>
+          <div class="tile" data-page="street">
+            <img src="str.jpg" alt="Street" />
+            <div class="tile-text">
+              <h2>Street</h2>
+              <p><strong>Fotografia uliczna</strong> - niepozorne,</br> surowe historie ludzi i ich otoczenia</p>
+              <hr />
+            </div>
+          </div>
+          <div class="tile" data-page="landscape">
+            <img src="land.jpg" alt="Landscape" />
+            <div class="tile-text">
+              <h2>Landscape</h2>
+              <p><strong>Fotografia krajobrazowa</strong> - przstrzeń,</br>która trwa w akcie mijania</p>
+              <hr />
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll('.tile').forEach(tile => {
+        tile.addEventListener('click', () => {
+          const page = tile.getAttribute('data-page');
+          setActivePage(page);
+          renderPage(page);
+        });
+      });
+    }
+
+    function renderPage(page) {
+      main.innerHTML = pages[page] || '<p>Nie znaleziono strony.</p>';
+    }
+
+    function setActivePage(page) {
+      document.querySelectorAll('.nav button').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-page') === page);
+      });
+      aboutLink.classList.toggle('active', page === 'about');
+    }
+
+    document.querySelectorAll('.nav button').forEach(button => {
+      button.addEventListener('click', () => {
+        const page = button.getAttribute('data-page');
+        setActivePage(page);
+        renderPage(page);
+      });
+    });
+
+    homeLink.addEventListener('click', e => {
+      e.preventDefault();
+      setActivePage('home');
+      renderHome();
+    });
+
+    aboutLink.addEventListener('click', e => {
+      e.preventDefault();
+      setActivePage('about');
+      renderPage('about');
+    });
+
+    // Start
+    renderHome();
+  </script>
 </body>
 </html>
