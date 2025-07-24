@@ -259,7 +259,9 @@
         flex-direction: column;
         height: auto;
       }
-
+      html {
+  scroll-behavior: smooth;
+}
       .sidebar {
         max-width: 100%;
         padding: 20px;
@@ -478,8 +480,13 @@
     }
 
     function renderPage(page) {
-      main.innerHTML = pages[page] || '<p>Nie znaleziono strony.</p>';
-    }
+  main.innerHTML = pages[page] || '<p>Nie znaleziono strony.</p>';
+
+  // Tylko na małych ekranach — scrolluj do treści
+  if (window.innerWidth <= 768) {
+    main.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 
     function setActivePage(page) {
       document.querySelectorAll('.nav button').forEach(btn => {
