@@ -252,7 +252,95 @@
       color: #333;
     }
 
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
 
+      .sidebar {
+        max-width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .sidebar h1,
+      .sidebar p.description,
+      .nav,
+      .about-link,
+      .contact-links {
+        max-width: 100%;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .nav button {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .about-link {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+
+      .main {
+        padding: 20px;
+      }
+
+      .tile {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .tile img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tile-text {
+        padding: 15px 0 0 0;
+        text-align: center;
+      }
+
+      .tile-text h2 {
+        font-size: 26px;
+      }
+
+      .tile-text p {
+        font-size: 16px;
+      }
+
+      .tile-text hr {
+        width: 100%;
+      }
+
+      .contact-links {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      .contact-link {
+        justify-content: center;
+      }
+
+      .portrait-gallery img,
+      .concert-gallery img,
+      .street-gallery img,
+      .about-gallery img {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
