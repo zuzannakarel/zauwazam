@@ -254,7 +254,22 @@
       color: #333;
     }
 
-    @media (max-width: 768px) {
+    .mobile-warning {
+  display: none;
+  background-color: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .mobile-warning {
+    display: block;
+  }
+
       body {
         flex-direction: column;
         height: auto;
@@ -348,6 +363,9 @@
   </style>
 </head>
 <body>
+  <div class="mobile-warning" id="mobile-warning">
+    Ta strona najlepiej wygląda na komputerze. Spróbuj otworzyć ją na większym ekranie 🖥️
+  </div>
   <div class="sidebar">
     <h1><a href="#" class="title-link" id="home-link">ZAUWAŻAM</a></h1>
     <p class="description">Szukam drugiego spojrzenia - w ludziach, miejscach, codzienności.</p>
