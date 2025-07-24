@@ -38,23 +38,23 @@
     }
 
     .sidebar h1 {
-      font-size: 24px;
+      font-size: 29px;
       margin-bottom: 15px;
       max-width: 200px;
-      text-align: left;
+      text-align: center;
       font-weight: bold;
     }
 
     .sidebar p.description {
-      font-size: 13px;
-      margin-bottom: 30px;
+      font-size: 14.5px;
+      margin-bottom: 5px;
       max-width: 200px;
       text-align: left;
       color: #aaa;
       line-height: 1.5;
     }
     .sidebar .copyright {
-      margin-top: 180px;
+      margin-top: 60px;
       font-size: 12px;
       color: #888;
       text-align: center;
@@ -91,21 +91,35 @@
     }
 
     .about-link {
-      text-align: center;
-      margin-top: 40px;      /* odstęp od góry, możesz zmienić wartość */
-      display: inline-block; /* aby margin-top zadziałał dla linka */
-      color: #aaa;
-      font-size: 14px;
+  display: inline-block;
+  
+  margin-top: 45px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #262626; /* jak kafelki */
+  border: 1.5px ;
+  border-radius: 6px;
+  color: #aaa;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+ 
+  display: inline-block;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-
-
-    }
-
+.about-link:hover {
+  background-color: #aaa;
+  color: #262626;
+}
     .about-link a {
       color: #aaa;
-      text-decoration: underline;
       cursor: pointer;
     }
+
 
     .main {
       flex: 1;
@@ -165,6 +179,9 @@
       border-top: 2px solid #ccc;
     }
 
+    .portrait-gallery img {
+  margin-bottom: 40px; /* odstęp pionowy między zdjęciami */
+}
     .about-gallery,
     .concert-gallery,
     .street-gallery,
@@ -184,21 +201,89 @@
       object-fit: cover;
       display: block;
     }
+.contact-links {
+  text-align:center;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 10px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.contact-link svg {
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: fill 0.3s;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+.contact-link:hover svg {
+  fill: white;
+}
+.nav button {
+      background-color: #444;
+      color: #ddd;
+      border: none;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      display: inline-block;
+      min-width: 170px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .nav button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+
   </style>
 </head>
 <body>
   <div class="sidebar">
     <h1><a href="#" class="title-link" id="home-link">ZAUWAŻAM</a></h1>
-    <p class="description">Szukam drugiego spojrzenia – w ludziach, miejscach, codzienności.</p>
+    <p class="description">Szukam drugiego spojrzenia - w ludziach, miejscach, codzienności.</p>
     <div class="nav">
       <button data-page="portrety">Portrety</button>
       <button data-page="koncerty">Koncerty</button>
       <button data-page="street">Street/urban</button>
       <button data-page="landscape">Landscape</button>
       <a href="#" class="about-link" id="about-link">O mnie</a>
+
+    </div>
+    <div class="contact-links">
+      <a href="mailto:zuzia@karel.co" class="contact-link" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#aaa" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm18 0H4v16h16V4zm-8 7L4 6h16l-8 5z"/>
+        </svg>
+        <span>zuzia@karel.co</span>
+      </a>
+      <a href="https://www.instagram.com/zauwazam/?locale=en_GBen_GB&hl=en" class="contact-link" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#aaa" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.88a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25z"/>
+        </svg>
+        <span>@zauwazam</span>
+      </a>
     </div>
     <div class="copyright">
-      &copy; 2025 Zuzanna Karel
+      &copy; 2025 zauwazam </br>All rights reserved.</br>
+      Designed by: Albert Janik
     </div>
   </div>
   
@@ -245,13 +330,12 @@
         </div>
       `,
       landscape: `
-        <h2>Landscape</h2>
+        <h2>Coming soon...</h2>
 
       `,
       about: `
           <div class="about-gallery">
             <img src="omnie1.png" alt="Zuzanna Karel" style="width:100%; height:auto; object-fit:cover;" />
-            <img src="omnie2.jpg" alt="Zuzanna Karel" style="width:100%; height:auto; object-fit:cover;" />
           </div>
       `
     };
